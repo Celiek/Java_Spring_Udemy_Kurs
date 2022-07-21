@@ -10,7 +10,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @SpringBootApplication
 public class TodoAppApplication implements RepositoryRestConfigurer {
-
+//test
 	public static void main(String[] args) {
 		SpringApplication.run(TodoAppApplication.class, args);
 	}
