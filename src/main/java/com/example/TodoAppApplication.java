@@ -7,9 +7,10 @@ import org.springframework.data.rest.core.event.ValidatingRepositoryEventListene
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import javax.validation.*;
 
 @SpringBootApplication
-public class TodoAppApplication implements RepositoryRestConfigurer {
+public class TodoAppApplication {
 //test
 	public static void main(String[] args) {
 		SpringApplication.run(TodoAppApplication.class, args);
@@ -20,9 +21,9 @@ public class TodoAppApplication implements RepositoryRestConfigurer {
 		return new LocalValidatorFactoryBean();
 	}
 
-	@Override
-	public void configureValidatingRepositoryEventListener(final ValidatingRepositoryEventListener validatingListener){
-		validatingListener.addValidator("przed utworzeniem" , validator());
-		validatingListener.addValidator("przed zapisem" , validator());
-	}
+//	@Override
+//	public void configureValidatingRepositoryEventListener(final ValidatingRepositoryEventListener validatingListener){
+//		validatingListener.addValidator("beforeCreate" , validator());
+//		validatingListener.addValidator("beforeSave" , validator());
+//	}
 }
